@@ -28,21 +28,6 @@ function subs(symbol, fileds) {
   });
 }
 
-/**
- * Get value for key
- * @customfunction
- * @param key The key
- * @returns The value for the key.
- */
-let login = async function (usename, password) {
-  try {
-    let token = await authModule.getToken(usename, password);
-    console.error(token);
-    return token;
-  } catch (e) {
-    console.error(e);
-  }
-};
 
 CustomFunctions.associate("SUBS", subs);
-CustomFunctions.associate("LOGIN", login);
+
