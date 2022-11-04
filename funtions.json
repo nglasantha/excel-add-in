@@ -1,0 +1,20 @@
+{
+  "functions": [
+    {
+      "description": "Get value for key",
+      "id": "SUBS",
+      "name": "SUBS",
+      "parameters": [
+        {
+          "name": "symbol",
+          "type": "any"
+        },
+        {
+          "name": "fileds",
+          "type": "any"
+        }
+      ],
+      "result": {}
+    }
+  ]
+}
