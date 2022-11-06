@@ -1,0 +1,84 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contoso Task Pane Add-in</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+    <script type="text/javascript" src="../commands/commands.js"></script>
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="../functions/functions.js"></script>
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <section id="sideload-msg" class="ms-welcome__main">
+        <h2 class="ms-font-xl">Please sideload your add-in to see app body.</h2>
+    </section>
+
+    <main id="app-body" style="display: none;">
+    <section class="app-holder">
+      <h1 class="app-holder__main-title">XIN Data Connector</h1>
+      <!-- FORM LOGIN        -->
+      <section class="app-holder__form"  id="login">
+        <section class="app-holder__form-row">
+          <section class="app-holder__form-label" for="txtDomain">Domain</section>
+          <section class="app-holder__form-control"><input type="text"  id="txtDomain" disabled class="c-form-control" value="xinfinit.com" placeholder="xinfinit.com"></section>
+        </section>
+        <section class="app-holder__form-row">
+          <section class="app-holder__form-label" for="txtUsername">Username</section>
+          <section class="app-holder__form-control"><input  id="txtUsername" type="text" class="c-form-control" placeholder="Username" value=""></section>
+        </section>
+        <section class="app-holder__form-row">
+          <section class="app-holder__form-label"  for="txtPassowrd">Password</section>
+          <section class="app-holder__form-control"><input  id="txtPassword" type="password" class="c-form-control"  placeholder="Passowrd" value=""></section>
+        </section>
+        <section class="app-holder__form-row app-holder__form-controllers app-holder__form-controllers--col-1">
+            <button type="button"  id="btnLogin" class="c-btn c-btn--primary">Login</button>
+        </section>
+      </section>
+      <!-- ./FORM LOGIN        -->
+
+      <!-- FORM CONVERTER        -->
+      <section class="app-holder__form" style="display: none;" id="configArea" >
+        <section class="app-holder__form-row">
+          <section class="app-holder__form-label">Provider </section>
+          <section class="app-holder__form-control"><input type="text" class="c-form-control" id="txtVendor" value="MS"></section>
+        </section>
+        <section class="app-holder__form-row">
+          <section class="app-holder__form-label">Exchange </section>
+          <section class="app-holder__form-control"><input type="text" class="c-form-control" id="txtExchange" value="182"></section>
+        </section>
+        <section class="app-holder__form-row app-holder__form-controllers">
+            <button type="button" class="c-btn c-btn--secondary" id="btnLogout">Log out</button>
+            <button type="button" id="run" class="c-btn c-btn--primary">Change Default Config</button>
+        </section>
+      </section>
+      <!-- ./FORM CONVERTER        -->
+      <section class="app-holder__footer">
+        <section class="connection-status" style="display:none">
+          <section class="blob"></section>
+          <label> Connected </label>
+        </section>
+        
+        <section class="powered-by">
+          <label>Powered by</label>
+          <img src="img/logo.png" alt="">
+        </section>
+
+      </section>
+    </section>
+    </main>
+</body>
+
+</html>
